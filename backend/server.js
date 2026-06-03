@@ -14,13 +14,22 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const normalizePrefix = (value) => {
+  if (value === undefined || value === null) return '/api';
+  const trimmed = String(value).trim();
+  if (trimmed === '' || trimmed === '/') return '';
+  return `/${trimmed.replace(/^\/+|\/+$/g, '')}`;
+};
+
+const apiPrefix = normalizePrefix(process.env.API_PREFIX);
+
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/notes', require('./routes/noteRoutes'));
-app.use('/api/bookmarks', require('./routes/bookmarkRoutes'));
+app.use(`${apiPrefix}/auth`, require('./routes/authRoutes'));
+app.use(`${apiPrefix}/notes`, require('./routes/noteRoutes'));
+app.use(`${apiPrefix}/bookmarks`, require('./routes/bookmarkRoutes'));
 
 // Health check route
-app.get('/api/health', (req, res) => {
+app.get(`${apiPrefix}/health`, (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
