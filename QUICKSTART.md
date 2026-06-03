@@ -5,9 +5,9 @@ Get the application up and running in 5 minutes!
 ## Prerequisites Check
 
 Before starting, ensure you have:
-- ✅ Node.js (v14 or higher) - Check: `node --version`
-- ✅ npm - Check: `npm --version`
-- ✅ MongoDB installed or MongoDB Atlas account
+-  Node.js (v14 or higher) - Check: `node --version`
+-  npm - Check: `npm --version`
+-  MongoDB installed or MongoDB Atlas account
 
 ## Step-by-Step Setup
 
@@ -63,7 +63,7 @@ NODE_ENV=development
 npm run dev
 ```
 
-✅ Backend should now be running on `http://localhost:5000`
+ Backend should now be running on `http://localhost:5000`
 
 ### Step 3: Frontend Setup (4 steps)
 
@@ -83,7 +83,7 @@ echo "NEXT_PUBLIC_API_URL=http://localhost:5000/api" > .env.local
 npm run dev
 ```
 
-✅ Frontend should now be running on `http://localhost:3000`
+ Frontend should now be running on `http://localhost:3000`
 
 ### Step 4: Test the Application
 
@@ -171,20 +171,20 @@ npm install
 
 Before deploying to production:
 
-1. ✅ Change JWT_SECRET to a strong random string
-2. ✅ Update MONGODB_URI to production database
-3. ✅ Set NODE_ENV=production
-4. ✅ Update NEXT_PUBLIC_API_URL to production API URL
-5. ✅ Enable HTTPS
-6. ✅ Set up proper database backups
-7. ✅ Configure environment variables on hosting platform
+1.  Change JWT_SECRET to a strong random string
+2.  Update MONGODB_URI to production database
+3.  Set NODE_ENV=production
+4.  Update NEXT_PUBLIC_API_URL to production API URL
+5.  Enable HTTPS
+6.  Set up proper database backups
+7.  Configure environment variables on hosting platform
 
 ## Next Steps
 
-- 📖 Read the full [README.md](README.md) for detailed documentation
-- 🔧 Import [postman_collection.json](postman_collection.json) to test API
-- 💻 Check [backend/README.md](backend/README.md) for API documentation
-- 🎨 Check [frontend/README.md](frontend/README.md) for UI documentation
+-  Read the full [README.md](README.md) for detailed documentation
+-  Import [postman_collection.json](postman_collection.json) to test API
+-  Check [backend/README.md](backend/README.md) for API documentation
+-  Check [frontend/README.md](frontend/README.md) for UI documentation
 
 ## Support
 
@@ -198,11 +198,11 @@ If you encounter any issues:
 ## Features Overview
 
 Once running, you can:
-- ✅ Create and manage notes
-- ✅ Save and organize bookmarks
-- ✅ Search by text
-- ✅ Filter by tags
-- ✅ Mark favorites
-- ✅ Auto-fetch bookmark titles from URLs
+-  Create and manage notes
+-  Save and organize bookmarks
+-  Search by text
+-  Filter by tags
+-  Mark favorites
+-  Auto-fetch bookmark titles from URLs
 
-Enjoy your Notes & Bookmark Manager! 🚀
+Enjoy your Notes & Bookmark Manager! 

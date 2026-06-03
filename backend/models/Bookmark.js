@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const bookmarkSchema = new mongoose.Schema({
   url: {
@@ -7,7 +8,10 @@ const bookmarkSchema = new mongoose.Schema({
     trim: true,
     validate: {
       validator: function(v) {
-        return /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(v);
+        return validator.isURL(v, {
+          require_protocol: true,
+          allow_underscores: true
+        });
       },
       message: 'Please provide a valid URL'
     }

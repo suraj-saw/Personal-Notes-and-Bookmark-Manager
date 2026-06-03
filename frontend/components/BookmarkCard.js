@@ -1,6 +1,8 @@
 import { FiEdit2, FiTrash2, FiStar, FiExternalLink } from 'react-icons/fi';
 
 export default function BookmarkCard({ bookmark, onEdit, onDelete, onToggleFavorite }) {
+  const safeUrl = bookmark.url.startsWith('http') ? bookmark.url : `https://${bookmark.url}`;
+
   return (
     <div className="card">
       <div className="flex items-start justify-between mb-3">
@@ -10,7 +12,7 @@ export default function BookmarkCard({ bookmark, onEdit, onDelete, onToggleFavor
               {bookmark.title}
             </h3>
             <a
-              href={bookmark.url}
+              href={safeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 hover:text-primary-700"

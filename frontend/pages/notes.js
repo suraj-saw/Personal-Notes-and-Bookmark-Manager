@@ -37,14 +37,10 @@ export default function Notes() {
     }
   };
 
-  const handleSearch = (query) => {
+  const handleSearch = (query, tags) => {
     setSearchQuery(query);
-    fetchNotes(query, tagFilter);
-  };
-
-  const handleTagFilter = (tags) => {
     setTagFilter(tags);
-    fetchNotes(searchQuery, tags);
+    fetchNotes(query, tags);
   };
 
   const handleCreateNote = async (noteData) => {
@@ -124,7 +120,6 @@ export default function Notes() {
           <div className="mb-6">
             <SearchBar
               onSearch={handleSearch}
-              onTagFilter={handleTagFilter}
               placeholder="Search notes..."
             />
           </div>

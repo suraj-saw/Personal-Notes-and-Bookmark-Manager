@@ -18,12 +18,12 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-8">
+        <div className="flex flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8">
             <Link href="/" className="text-xl font-bold text-primary-600">
               Notes & Bookmarks
             </Link>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-2">
               <Link
                 href="/notes"
                 className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium ${
@@ -48,8 +48,8 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-sm text-gray-600 max-w-[14rem] truncate">
               Welcome, {user.username}
             </span>
             <button

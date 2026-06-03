@@ -1,6 +1,13 @@
 const Bookmark = require('../models/Bookmark');
 const { fetchUrlMetadata } = require('../utils/urlMetadata');
 
+const normalizeUrl = (value) => {
+  if (!value) return value;
+  return value.startsWith('http://') || value.startsWith('https://')
+    ? value
+    : `https://${value}`;
+};
+
 // @desc    Get all bookmarks
 // @route   GET /api/bookmarks
 // @access  Private
@@ -68,6 +75,8 @@ const createBookmark = async (req, res) => {
       return res.status(400).json({ message: 'URL is required' });
     }
 
+    url = normalizeUrl(url);
+
     // Auto-fetch title if not provided (Bonus feature)
     if (!title || title.trim() === '') {
       const metadata = await fetchUrlMetadata(url);
@@ -109,7 +118,11 @@ const updateBookmark = async (req, res) => {
       return res.status(403).json({ message: 'Not authorized to update this bookmark' });
     }
 
-    const { url, title, description, tags, isFavorite } = req.body;
+    let { url, title, description, tags, isFavorite } = req.body;
+
+    if (url) {
+      url = normalizeUrl(url);
+    }
 
     bookmark.url = url !== undefined ? url : bookmark.url;
     bookmark.title = title !== undefined ? title : bookmark.title;

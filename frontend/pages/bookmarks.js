@@ -37,14 +37,10 @@ export default function Bookmarks() {
     }
   };
 
-  const handleSearch = (query) => {
+  const handleSearch = (query, tags) => {
     setSearchQuery(query);
-    fetchBookmarks(query, tagFilter);
-  };
-
-  const handleTagFilter = (tags) => {
     setTagFilter(tags);
-    fetchBookmarks(searchQuery, tags);
+    fetchBookmarks(query, tags);
   };
 
   const handleCreateBookmark = async (bookmarkData) => {
@@ -124,7 +120,6 @@ export default function Bookmarks() {
           <div className="mb-6">
             <SearchBar
               onSearch={handleSearch}
-              onTagFilter={handleTagFilter}
               placeholder="Search bookmarks..."
             />
           </div>

@@ -2,7 +2,7 @@
 
 A full-stack web application for managing personal notes and bookmarks with search, tagging, and favorites functionality.
 
-## 🚀 Features
+##  Features
 
 ### Core Features
 - **Notes Management**: Create, read, update, and delete notes
@@ -17,7 +17,7 @@ A full-stack web application for managing personal notes and bookmarks with sear
 - **Responsive Design**: Mobile-friendly UI with Tailwind CSS
 - **Real-time Updates**: Instant UI updates after operations
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - Node.js
@@ -33,7 +33,7 @@ A full-stack web application for managing personal notes and bookmarks with sear
 - React Icons
 - Context API for state management
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 notes-bookmark-manager/
@@ -92,7 +92,7 @@ notes-bookmark-manager/
     └── package.json
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -164,7 +164,7 @@ npm run dev
 
 The frontend will run on `http://localhost:3000`
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Authentication Endpoints
 
@@ -307,7 +307,7 @@ DELETE /api/bookmarks/:id
 Authorization: Bearer <token>
 ```
 
-## 🔒 Security Features
+##  Security Features
 
 - JWT-based authentication
 - Password hashing with bcrypt
@@ -315,7 +315,7 @@ Authorization: Bearer <token>
 - User-specific data isolation
 - CORS enabled for frontend access
 
-## 🎨 UI Features
+##  UI Features
 
 - Clean and modern design
 - Responsive layout (mobile, tablet, desktop)
@@ -326,7 +326,7 @@ Authorization: Bearer <token>
 - Favorite indicators
 - Tag management
 
-## 🧪 Testing the Application
+##  Testing the Application
 
 ### Using cURL
 
@@ -352,7 +352,7 @@ curl -X POST http://localhost:5000/api/notes \
   -d '{"title":"Test Note","content":"This is a test note","tags":["test"]}'
 ```
 
-## 🌟 Key Highlights
+##  Key Highlights
 
 - **Clean Architecture**: Modular code structure with separation of concerns
 - **Error Handling**: Comprehensive error handling and validation
@@ -360,7 +360,7 @@ curl -X POST http://localhost:5000/api/notes \
 - **Scalability**: Built with best practices for easy scaling
 - **Documentation**: Well-documented code and API endpoints
 
-## 📝 Development Notes
+##  Development Notes
 
 ### Code Quality
 - Consistent naming conventions
@@ -373,15 +373,15 @@ curl -X POST http://localhost:5000/api/notes \
 - Optimized React components with proper state management
 - Lazy loading and code splitting with Next.js
 
-## 🤝 Contributing
+##  Contributing
 
 This is a demonstration project for Dev Innovations Labs assignment.
 
-## 📄 License
+##  License
 
 This project is created for educational and demonstration purposes.
 
-## 👨‍💻 Author
+##  Author
 
 Created as part of the Full Stack Developer assignment for Dev Innovations Labs.
 

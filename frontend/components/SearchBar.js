@@ -1,30 +1,28 @@
 import { useState } from 'react';
 import { FiSearch, FiX } from 'react-icons/fi';
 
-export default function SearchBar({ onSearch, onTagFilter, placeholder = "Search..." }) {
+export default function SearchBar({ onSearch, showTagFilter = true, placeholder = "Search..." }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [tags, setTags] = useState('');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch(searchTerm);
-    if (onTagFilter) {
-      onTagFilter(tags);
+    if (onSearch) {
+      onSearch(searchTerm, tags);
     }
   };
 
   const handleClear = () => {
     setSearchTerm('');
     setTags('');
-    onSearch('');
-    if (onTagFilter) {
-      onTagFilter('');
+    if (onSearch) {
+      onSearch('', '');
     }
   };
 
   return (
     <form onSubmit={handleSearch} className="space-y-3">
-      <div className="flex space-x-3">
+      <div className="flex flex-col md:flex-row gap-3">
         <div className="flex-1 relative">
           <FiSearch className="absolute left-3 top-3 text-gray-400" />
           <input
@@ -35,8 +33,8 @@ export default function SearchBar({ onSearch, onTagFilter, placeholder = "Search
             className="input-field pl-10"
           />
         </div>
-        {onTagFilter && (
-          <div className="w-64">
+        {showTagFilter && (
+          <div className="w-full md:w-64">
             <input
               type="text"
               value={tags}
@@ -46,14 +44,14 @@ export default function SearchBar({ onSearch, onTagFilter, placeholder = "Search
             />
           </div>
         )}
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="btn-primary w-full md:w-auto">
           Search
         </button>
         {(searchTerm || tags) && (
           <button
             type="button"
             onClick={handleClear}
-            className="btn-secondary"
+            className="btn-secondary w-full md:w-auto"
           >
             <FiX />
           </button>
